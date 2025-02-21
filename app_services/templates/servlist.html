@@ -1,0 +1,33 @@
+{% extends 'users/base.html' %}
+{% block navhome %}
+
+
+<div class="container">
+    <h1>SERVICE LIST</h1>
+    <hr>
+    <table class="table table-bordered table-striped", style="text-align: center;">
+        <tr >
+            <th style="width: 25%; background-color: rgba(65, 203, 241, 0.399) !important;">Name Service</th>
+            <th style="width: 25%; background-color: rgba(65, 203, 241, 0.399) !important;">Price</th>
+            <th style="width: 25%; background-color: rgba(65, 203, 241, 0.399) !important;">Time Service</th>
+            <th style="width: 12.5%; background-color: rgba(65, 203, 241, 0.399) !important;">EDIT</th>
+            <th style="width: 12.5%; background-color: rgba(65, 203, 241, 0.399) !important;">DELETE</th>
+        </tr>
+        {% for serv in servs %}
+        <tr>
+            <td>{{serv.name_serv}}</td>
+            <td>{{serv.price_serv}}</td>
+            <td>{{serv.min_serv}}</td>
+
+            
+
+            <td><a href="{% url 'serv_edit' serv.id_serv %}" class="btn btn-warning" onclick="return confirm('Are you sure you want to EDIT this client?');">EDIT</a></td>
+                
+
+            <td><a href="{% url 'serv_delete' serv.id_serv %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to DELETE this client?');">DELETE</a>
+            </td>
+        </tr>
+
+        {% endfor %}
+
+{%endblock%}

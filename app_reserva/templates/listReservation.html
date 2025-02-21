@@ -1,0 +1,36 @@
+{% extends 'users/base.html' %}
+{% block navhome %}
+
+
+<div class="container">
+    <h1>RESERVATION LIST</h1>
+    <hr>
+    <table class="table table-bordered table-striped", style="text-align: center;">
+        <tr >
+            <th style="width: 25%; background-color: rgba(65, 203, 241, 0.399) !important;">DAY</th>
+            <th style="width: 25%; background-color: rgba(65, 203, 241, 0.399) !important;">CLIENT</th>
+            <th style="width: 25%; background-color: rgba(65, 203, 241, 0.399) !important;">SERVICE</th>
+            <th style="width: 12.5%; background-color: rgba(65, 203, 241, 0.399) !important;">EDIT</th>
+            <th style="width: 12.5%; background-color: rgba(65, 203, 241, 0.399) !important;">DELETE</th>
+        </tr>
+        {% for reserv in lstreserv %}
+        <tr>
+            <td>{{reserv.date_reserv}}</td>
+            <td>{{reserv.reserv_client}}</td>
+            <td>{{reserv.service_client}}</td>
+            
+            
+            <td><a href="#" class="btn btn-warning" onclick="return confirm('Are you sure you want to EDIT this client?');">EDIT</a></td>
+                
+            <td><a href="{% url 'delete_reserv' reserv.id_reserv %}" class="btn btn-danger" onclick="return confirm('Are you sure you want to DELETE this client?');">DELETE</a>
+            </td>
+        </tr>
+        {%endfor%}
+
+
+
+
+
+
+</div>
+{%endblock%}

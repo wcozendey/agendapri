@@ -1,0 +1,37 @@
+{% extends 'users/base.html' %}
+{% block navhome %}
+
+
+<div class="container">
+    <h1>REGISTER CLIENT</h1>
+    <hr>
+    {% if message %}
+    <p style="color: red;">{{ message }}</p>
+    {% endif %}
+    <form action="{% url 'addcli'%}" method="POST">
+        {% csrf_token %}
+
+        
+        <label for="name">Name:</label>
+        <div class="col-md-6">
+            <input type="text" id="name" name="name"><br>
+        </div>
+        
+        <label for="birthday">Birthday:</label>
+
+        <div class="col-md-6">
+            <input type="text" id="birth" name="birthday" placeholder="DD/MM" maxlength="5"><br>
+        </div>
+
+        <label for="telephone">Telephone:</label>
+
+        <div class="col-md-6">
+            <input type="text" id="telephone" name="telephone"><br><br>
+        </div>
+
+        <button value="saveuser" button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+
+{%endblock%}

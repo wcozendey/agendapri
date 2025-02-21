@@ -1,0 +1,35 @@
+{% extends 'users/base.html' %}
+{% block navhome %}
+
+
+<div class="container">
+    <h1>EDIT SERVICE</h1>
+    <hr>
+    <div class="container">
+        <form action="{% url 'serv_edit' serv.id_serv%}" method="POST">{% csrf_token %}
+
+            <label for="name_serv">Name:</label>
+        <div class="col-md-6">
+
+            <input type="text" id="name_serv" name="name_serv" value="{{serv.name_serv}}" required><br>
+        </div>
+        
+        <label for="price_serv">Price:</label>
+
+        <div class="col-md-6">
+            <input type="text" id="price_serv" name="price_serv" value="{{serv.price_serv}}" required><br>
+        </div>
+
+        <label for="min_serv">Service Time:</label>
+        <div class="col-md-6">
+            <input type="text" id="min_serv" name="min_serv" value="{{serv.min_serv}}" required><br><br>
+        </div>
+
+        <button value="saveserv" button type="submit" class="btn btn-primary">Save</button>
+    </form>
+
+    </div>
+
+</div>
+
+{%endblock%}

@@ -1,0 +1,29 @@
+{% extends 'users/base.html' %}
+{% block navhome %}
+
+<style>
+    .container { text-align: center; background-color: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+</style>  
+
+
+
+
+
+{% if request.user.is_authenticated %}
+<div class="container">
+    <h1>Thank you for using our online planner.</h1>
+    <p>We hope you have a great experience! See you soon! <br>
+        <a class="navbar-brand" href="{%url 'logout'%}" style="text-decoration: underline;">LOGOUT</a></p>
+</div>
+
+{% else %}
+<div class="container">
+    <h1>Welcome to Your Online Planner</h1>
+    <p>Don't forget to <a class="navbar-brand" href="{%url 'login'%}" style="text-decoration: underline;">LOGIN</a> to get started.</p>
+</div>
+{% endif %}
+</html>
+
+
+
+{%endblock%}
