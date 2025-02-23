@@ -1,4 +1,4 @@
 [[redirects]]
 from = "/*"
-to = "AGENDA/index.html"
+to = "app_agenda/templates/index.html"
 status = 200
