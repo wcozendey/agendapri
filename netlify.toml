@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/*"
-to = "app_agenda/templates/index.html"
-status = 200
