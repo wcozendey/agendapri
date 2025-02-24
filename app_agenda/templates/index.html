@@ -15,11 +15,21 @@
     <p>We hope you have a great experience! See you soon! <br>
         <a class="navbar-brand" href="{%url 'logout'%}" style="text-decoration: underline;">LOGOUT</a></p>
 </div>
+<br>
 
 {% else %}
 <div class="container">
     <h1>Welcome to Your Online Planner</h1>
     <p>Don't forget to <a class="navbar-brand" href="{%url 'login'%}" style="text-decoration: underline;">LOGIN</a> to get started.</p>
+</div>
+<br>
+<div class="container">
+    <h5>
+        <p>
+        user: wcozendey
+        </p>
+        pass: 123
+    </h5>    
 </div>
 {% endif %}
 </html>
